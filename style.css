@@ -1,0 +1,202 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Colors */
+:root {
+    --primary: #1a73e8; /* Blue */
+    --secondary: #333;  /* Dark */
+    --accent: #fff;      /* White */
+    --background: #f9f9f9; /* Light Grey */
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+nav .socials {
+    display: flex;
+    gap: 1rem;
+}
+
+nav .socials li {
+    list-style: none;
+}
+
+nav .socials i {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+nav .socials i:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #1a73e8, #5c9af8);
+    color: var(--accent);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#hero h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hero .cta {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+#hero .cta:hover {
+    background: #f0f0f0;
+}
+
+/* Sections */
+section {
+    padding: 100px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Roadmap */
+.timeline {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.timeline-item {
+    padding: 1rem;
+    border-left: 3px solid var(--primary);
+    text-align: left;
+}
+
+.timeline-item h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary);
+    color: var(--accent);
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+/* Remove bullet points and stack */
+.socials {
+    display: flex; /* Arrange items in a row */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove extra padding */
+    margin: 0; /* Remove extra margin */
+    justify-content: center; /* Center-align items in the footer */
+    gap: 1rem; /* Space between items */
+}
+
+/* Styling for social icons */
+.socials img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.socials img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 1.5rem;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+}
