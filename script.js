@@ -12,4 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sections.forEach(section => observer.observe(section));
+
+    // Smooth scroll via JS for nav links (in addition to CSS)
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetID = link.getAttribute('href');
+            const targetEl = document.querySelector(targetID);
+            if(targetEl) {
+                window.scrollTo({
+                    top: targetEl.offsetTop - 70, // Adjust offset for sticky nav
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
