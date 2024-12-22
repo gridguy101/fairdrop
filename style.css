@@ -45,16 +45,37 @@ nav h1 {
     margin-right: auto; /* Push other elements to the right */
 }
 
-/* Nav Links */
-.nav-links {
-    list-style: none;
+/* Navigation */
+nav {
     display: flex;
-    gap: 1.5rem;
-    padding: 0;
+    justify-content: space-between; /* Space out logo, links, and socials */
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Logo */
+nav h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary);
     margin: 0;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: flex-end; /* Align to the right */
-    flex-grow: 1; /* Take up remaining space */
+    white-space: nowrap; /* Prevent wrapping for long titles */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0 auto; /* Center the links horizontally */
+    padding: 0;
+    justify-content: center;
+    flex: 1; /* Take up available space between logo and socials */
 }
 
 .nav-links li {
@@ -65,9 +86,9 @@ nav h1 {
     text-decoration: none;
     color: var(--secondary);
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
     padding: 0.5rem;
-    white-space: nowrap; /* Prevent link text from breaking */
+    white-space: nowrap; /* Prevent wrapping for links */
 }
 
 .nav-links a:hover {
@@ -79,9 +100,8 @@ nav h1 {
     display: flex;
     gap: 1rem;
     list-style: none;
-    padding: 0;
     margin: 0;
-    justify-content: flex-end;
+    padding: 0;
 }
 
 .socials img {
@@ -95,32 +115,31 @@ nav h1 {
     transform: scale(1.1);
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Mobile */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center align for smaller screens */
-        padding: 1rem;
+        flex-direction: column; /* Stack everything vertically */
+        padding: 1rem; /* Adjust padding for smaller screens */
     }
 
     nav h1 {
-        margin-bottom: 1rem; /* Add space below logo */
-        margin-right: 0; /* Reset margin */
-        text-align: center;
+        margin-bottom: 1rem; /* Add spacing below the logo */
     }
 
     .nav-links {
-        justify-content: center; /* Center align nav links */
+        flex-wrap: wrap; /* Allow links to wrap */
+        justify-content: center; /* Center the links */
         gap: 1rem; /* Reduce spacing for smaller screens */
-        flex-grow: 0; /* Disable flex growth */
-        flex-wrap: wrap; /* Ensure links wrap properly */
+        margin: 0; /* Remove auto margin */
     }
 
     .socials {
-        justify-content: center; /* Center align socials */
-        margin-top: 1rem; /* Add space above socials */
+        margin-top: 1rem; /* Add space above social icons */
+        justify-content: center; /* Center the icons */
     }
 }
+
+
 
 /* Hero Section */
 #hero {
